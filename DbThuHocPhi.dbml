@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="THUHOCPHI" Class="DbThuHocPhiDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NHONS2MIU\SQLEXPRESS;Initial Catalog=THUHOCPHI;Persist Security Info=True;User ID=sa" SettingsObjectName="QuanLiDuAn.Properties.Settings" SettingsPropertyName="THUHOCPHIConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.dkbldqt" Member="dkbldqts">
+    <Type Name="dkbldqt">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NgayDong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TongSoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NguoiThu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HocKyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoPhieu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.gdt_payer_escape" Member="gdt_payer_escapes">
+    <Type Name="gdt_payer_escape">
+      <Column Name="taxoffice_name" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="payer_code" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="payer_name" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="owner_id_card" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="escape_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="warning_info" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="storage_symbol" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="is_deleted" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="created_by" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="deleted_by" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="deleted_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="modified_by" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="file_upload" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocKy" Member="HocKies">
+    <Type Name="HocKy">
+      <Column Name="HocKyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HocKy" Member="HocKy1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="HocPhi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kqdk_dqt" Member="kqdk_dqts">
+    <Type Name="kqdk_dqt">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Lop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="MaMH" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Nhhk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoTC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="SoTCHP" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Diemqt" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Diemthi" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DiemTk" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Diemso" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Diemchu" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="NgayLuu" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HocKyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kqthuhocphi17_2" Member="kqthuhocphi17_2s">
+    <Type Name="kqthuhocphi17_2">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TongSoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiThu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HocKyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KQTHUHOCPHI19_2" Member="KQTHUHOCPHI19_2s">
+    <Type Name="KQTHUHOCPHI19_2">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TongSoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiThu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HocKyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kqthuhocphi22_2" Member="kqthuhocphi22_2s">
+    <Type Name="kqthuhocphi22_2">
+      <Column Name="MaSV" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTenSV" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TongSoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NgayDong" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NguoiThu" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="HocKyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Log]" Member="Log" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SoPhieu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MonHoc" Member="MonHocs">
+    <Type Name="MonHoc">
+      <Column Name="MaMH" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenMH" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SoTCHP" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SinhVien" Member="SinhViens">
+    <Type Name="SinhVien">
+      <Column Name="MaSv" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Lop" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
