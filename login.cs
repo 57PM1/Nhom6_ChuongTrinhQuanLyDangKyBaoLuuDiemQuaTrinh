@@ -56,5 +56,15 @@ namespace QuanLiDuAn
                 MessageBox.Show("Sai thông tin đăng nhập!");
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

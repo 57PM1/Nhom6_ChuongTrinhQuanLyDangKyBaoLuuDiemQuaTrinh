@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLiDuAn
 {
-    public partial class form103 : Form
+    public partial class form101_taomoi : Form
     {
-        public form103()
+        public form101_taomoi()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

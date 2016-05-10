@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace QuanLiDuAn
 {
-    public partial class form103 : Form
+    public partial class form101_capnhat : Form
     {
-        public form103()
+        public form101_capnhat()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
