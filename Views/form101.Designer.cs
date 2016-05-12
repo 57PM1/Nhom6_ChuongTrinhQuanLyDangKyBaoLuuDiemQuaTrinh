@@ -32,10 +32,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txt_idhocky = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_tenhocky = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_muchocphi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.khoa_mo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,47 +67,23 @@
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txt_idhocky,
-            this.txt_tenhocky,
-            this.txt_muchocphi,
-            this.khoa_mo});
             this.dataGridView1.Location = new System.Drawing.Point(12, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(551, 260);
             this.dataGridView1.TabIndex = 3;
             // 
-            // txt_idhocky
-            // 
-            this.txt_idhocky.HeaderText = "Học Kỳ ID";
-            this.txt_idhocky.Name = "txt_idhocky";
-            // 
-            // txt_tenhocky
-            // 
-            this.txt_tenhocky.HeaderText = "Tên Học Kỳ";
-            this.txt_tenhocky.Name = "txt_tenhocky";
-            // 
-            // txt_muchocphi
-            // 
-            this.txt_muchocphi.HeaderText = "Mức Học Phí";
-            this.txt_muchocphi.Name = "txt_muchocphi";
-            // 
-            // khoa_mo
-            // 
-            this.khoa_mo.HeaderText = "Khóa/Mở";
-            this.khoa_mo.Name = "khoa_mo";
-            // 
             // form101
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 304);
+            this.ClientSize = new System.Drawing.Size(569, 311);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "form101";
             this.Text = "Khởi tạo học kì và mức học phí";
+            this.Load += new System.EventHandler(this.form101_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -123,9 +95,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txt_idhocky;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txt_tenhocky;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txt_muchocphi;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn khoa_mo;
     }
 }
