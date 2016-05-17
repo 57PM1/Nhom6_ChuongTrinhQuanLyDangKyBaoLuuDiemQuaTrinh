@@ -14,20 +14,14 @@ namespace QuanLiDuAn
 {
     public partial class form101 : Form
     {
-        public static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GJ9RE6M\SQLEXPRESS;Initial Catalog=ThuHocPhi;Integrated Security=True");
-        string id;
+        public static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GJ9RE6M\SQLEXPRESS;Integrated Security=True");
+        string HocKyID;
         int id1;
         int delete_id;
         public form101()
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void form101_Load(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Open)
@@ -51,8 +45,8 @@ namespace QuanLiDuAn
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            id = dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString();
-            if (id == "")
+            HocKyID = dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString();
+            if (HocKyID == "")
             {
                 id1 = 0;
             }
@@ -64,7 +58,7 @@ namespace QuanLiDuAn
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [ThuHocPhi].[dbo].[HocKy] value('" + dataGridView1.Rows.[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows.[e.RowIndex].Cells.["HocKy"].Value.ToString()+"','" +dataGridView1.Rows.[e.RowIndex].Cells.["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows.[e.RowIndex].Cells.["TrangThai"].Value.ToString()+"')";
+                cmd.CommandText = "insert into [ThuHocPhi].[dbo].[HocKy] value('" + dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows[e.RowIndex].Cells["HocKy"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString()+"')";
                 cmd.ExecuteNonQuery();
                 fill_grid();
             }
@@ -72,7 +66,7 @@ namespace QuanLiDuAn
             {
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText= "update [ThuHocPhi].[dbo].[HocKy] set name('" + dataGridView1.Rows.[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows.[e.RowIndex].Cells.["HocKy"].Value.ToString()+"','" +dataGridView1.Rows.[e.RowIndex].Cells.["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows.[e.RowIndex].Cells.["TrangThai"].Value.ToString()+"')";
+                cmd.CommandText= "update [ThuHocPhi].[dbo].[HocKy] set name('" + dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows[e.RowIndex].Cells["HocKy"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString()+"')";
                 cmd.ExecuteNonQuery();
                 fill_grid();
 
@@ -89,7 +83,7 @@ namespace QuanLiDuAn
         {
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from [ThuHocPhi].[dbo].[HocKy]  where id= " + delete_id + "";
+            cmd.CommandText = "delete from [ThuHocPhi].[dbo].[HocKy]  where HocKyID= " + delete_id + "";
             cmd.ExecuteNonQuery();
             fill_grid();
 
