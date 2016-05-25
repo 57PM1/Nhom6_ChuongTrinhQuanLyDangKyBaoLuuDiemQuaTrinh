@@ -27,10 +27,21 @@ namespace QuanLiDuAn.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NHONS2MIU\\SQLEXPRESS;Initial Catalog=THUHOCPHI;Persist Security Info=" +
-            "True;User ID=sa;Password=hoanggiang")]
+            "True;User ID=sa")]
         public string THUHOCPHIConnectionString {
             get {
                 return ((string)(this["THUHOCPHIConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-GJ9RE6M\\SQLEXPRESS;Initial Catalog=ThuHocPhi;Integrated Secur" +
+            "ity=True")]
+        public string ThuHocPhiConnectionString1 {
+            get {
+                return ((string)(this["ThuHocPhiConnectionString1"]));
             }
         }
     }

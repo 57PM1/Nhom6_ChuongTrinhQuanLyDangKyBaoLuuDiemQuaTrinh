@@ -48,17 +48,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\FormFactory.cs" />
+    <Compile Include="Common\Hocky.cs" />
     <Compile Include="Connect\Connector.cs" />
+    <Compile Include="Models\DbThuHocPhi1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbThuHocPhi1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CapNhatHK.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\CapNhatHK.Designer.cs">
       <DependentUpon>CapNhatHK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\DbThuHocPhi.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbThuHocPhi.dbml</DependentUpon>
     </Compile>
     <Compile Include="Views\DKDQT.cs">
       <SubType>Form</SubType>
@@ -66,17 +68,17 @@
     <Compile Include="Views\DKDQT.Designer.cs">
       <DependentUpon>DKDQT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Form101.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Form101.Designer.cs">
+      <DependentUpon>Form101.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\form101.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\form101.Designer.cs">
-      <DependentUpon>form101.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\form102.cs">
       <SubType>Form</SubType>
@@ -104,11 +106,17 @@
     <Compile Include="Views\TaoMoiHK.Designer.cs">
       <DependentUpon>TaoMoiHK.cs</DependentUpon>
     </Compile>
+    <None Include="Models\DbThuHocPhi1.dbml.layout">
+      <DependentUpon>DbThuHocPhi1.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Views\CapNhatHK.resx">
       <DependentUpon>CapNhatHK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\DKDQT.resx">
       <DependentUpon>DKDQT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Form101.resx">
+      <DependentUpon>Form101.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SuaDQT.resx">
       <DependentUpon>SuaDQT.cs</DependentUpon>
@@ -116,14 +124,9 @@
     <EmbeddedResource Include="Views\TaoMoiHK.resx">
       <DependentUpon>TaoMoiHK.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Views\DbThuHocPhi.dbml.layout">
-      <DependentUpon>DbThuHocPhi.dbml</DependentUpon>
-    </None>
+    <None Include="app.config" />
     <EmbeddedResource Include="Views\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\form101.resx">
-      <DependentUpon>form101.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\form102.resx">
       <DependentUpon>form102.cs</DependentUpon>
@@ -141,12 +144,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Views\DbThuHocPhi.dbml">
+    <None Include="form1.Designer.1" />
+    <None Include="Models\DbThuHocPhi1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DbThuHocPhi.designer.cs</LastGenOutput>
+      <LastGenOutput>DbThuHocPhi1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="form1.Designer.1" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -167,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

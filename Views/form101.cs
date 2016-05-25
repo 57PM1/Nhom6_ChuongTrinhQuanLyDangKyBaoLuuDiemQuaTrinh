@@ -8,95 +8,89 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyDuAn.Common;
 
-
-namespace QuanLiDuAn
+namespace QuanLiDuAn.Views
 {
-    public partial class form101 : Form
+    public partial class Form101 : Form
     {
-        public static SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-GJ9RE6M\SQLEXPRESS;Integrated Security=True");
-        string HocKyID;
-        int id1;
-        int delete_id;
-        public form101()
+        public static SqlConnection CON = new SqlConnection("Data Source=DESKTOP-GJ9RE6M\SQLEXPRESS;Initial Catalog=ThuHocPhi;Integrated Security=True");
+        public Form101()
         {
             InitializeComponent();
-        }
-        private void form101_Load(object sender, EventArgs e)
-        {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-            con.Open();
-            fill_grid();
-        }
-        public void fill_grid()
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from [ThuHocPhi].[dbo].[HocKy]";
-            DataTable dt = new DataTable();
-            SqlDataAdapter sda = new SqlDataAdapter();
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            HocKyID = dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString();
-            if (HocKyID == "")
-            {
-                id1 = 0;
-            }
-            else
-            {
-                id1 = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString());
-            }
-            if (id1 == 0)
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "insert into [ThuHocPhi].[dbo].[HocKy] value('" + dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows[e.RowIndex].Cells["HocKy"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString()+"')";
-                cmd.ExecuteNonQuery();
-                fill_grid();
-            }
-            else
-            {
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText= "update [ThuHocPhi].[dbo].[HocKy] set name('" + dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString() + "', '" +dataGridView1.Rows[e.RowIndex].Cells["HocKy"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["HocPhi"].Value.ToString()+"','" +dataGridView1.Rows[e.RowIndex].Cells["TrangThai"].Value.ToString()+"')";
-                cmd.ExecuteNonQuery();
-                fill_grid();
-
-            }
-        }
-
-        private void deleteRecordToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "delete from [ThuHocPhi].[dbo].[HocKy]  where HocKyID= " + delete_id + "";
-            cmd.ExecuteNonQuery();
-            fill_grid();
 
         }
 
-        private void dataGridView1_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        private void Form101_Load(object sender, EventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (CON.State == ConnectionState.Open)
             {
-                delete_id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["HocKyID"].Value.ToString());
-                this.contextMenuStrip1.Show(this.dataGridView1, e.Location);
-                contextMenuStrip1.Show(Cursor.Position);
+                CON.Close();
             }
+            CON.Open();
+            fill_grid();
+        }
+         public void fill_grid()
+        {
+            SqlCommand cmd = CON.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from [ThuHocPHi].[dbo].[HocKy] ";
+            cmd.ExecuteNonQuery();
+            DataTable DT = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter("select * from [ThuHocPHi].[dbo].[HocKy]", CON);
+            SDA.Fill(DT);
+            dataGridView1.DataSource = DT;
+            CON.Close();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            TaoMoiHK t = new TaoMoiHK();
+            t.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CON.Open();
+            DataTable DT = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter("select * from [ThuHocPHi].[dbo].[HocKy]", CON);
+            SDA.Fill(DT);
+            dataGridView1.DataSource = DT;
+            CON.Close();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+             int hockyid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+            int hocky = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+            double hocphi = double.Parse(dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString());
+            bool trangthai;
+            if ((bool)dataGridView1.Rows[e.RowIndex].Cells[3].Value)
+            {
+                 trangthai = true;
+            }
+            else
+            {
+                trangthai = false;
+            }
+            FormFactory.hocphi = hocphi;
+            FormFactory.hockyid = hockyid;
+            FormFactory.hocky = hocky;
+            FormFactory.trangthai = trangthai;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CapNhatHK c = new CapNhatHK();
+            c.ShowDialog();
         }
     }
 }

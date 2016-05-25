@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLiDuAn.Views;
+using QuanLiDuAn;
 
 namespace QuanLiDuAn
 {
@@ -16,7 +18,7 @@ namespace QuanLiDuAn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new form101());
+            Application.Run(new TaoMoiHK());
         }
     }
 }

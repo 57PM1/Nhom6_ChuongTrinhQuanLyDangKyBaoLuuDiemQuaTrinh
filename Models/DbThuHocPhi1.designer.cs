@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLiDuAn.Views
+namespace QuanLiDuAn.Models
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -22,20 +22,20 @@ namespace QuanLiDuAn.Views
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="THUHOCPHI")]
-	public partial class DbThuHocPhiDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ThuHocPhi")]
+	public partial class DbThuHocPhi1DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void Insertdkbldqt(dkbldqt instance);
-    partial void Updatedkbldqt(dkbldqt instance);
-    partial void Deletedkbldqt(dkbldqt instance);
     partial void Insertuser(user instance);
     partial void Updateuser(user instance);
     partial void Deleteuser(user instance);
+    partial void Insertdkbldqt(dkbldqt instance);
+    partial void Updatedkbldqt(dkbldqt instance);
+    partial void Deletedkbldqt(dkbldqt instance);
     partial void InsertHocKy(HocKy instance);
     partial void UpdateHocKy(HocKy instance);
     partial void DeleteHocKy(HocKy instance);
@@ -50,42 +50,34 @@ namespace QuanLiDuAn.Views
     partial void DeleteSinhVien(SinhVien instance);
     #endregion
 		
-		public DbThuHocPhiDataContext() : 
-				base(global::QuanLiDuAn.Properties.Settings.Default.THUHOCPHIConnectionString, mappingSource)
+		public DbThuHocPhi1DataContext() : 
+				base(global::QuanLiDuAn.Properties.Settings.Default.ThuHocPhiConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DbThuHocPhiDataContext(string connection) : 
+		public DbThuHocPhi1DataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DbThuHocPhiDataContext(System.Data.IDbConnection connection) : 
+		public DbThuHocPhi1DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DbThuHocPhiDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DbThuHocPhi1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DbThuHocPhiDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DbThuHocPhi1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<dkbldqt> dkbldqts
-		{
-			get
-			{
-				return this.GetTable<dkbldqt>();
-			}
 		}
 		
 		public System.Data.Linq.Table<user> users
@@ -96,11 +88,11 @@ namespace QuanLiDuAn.Views
 			}
 		}
 		
-		public System.Data.Linq.Table<gdt_payer_escape> gdt_payer_escapes
+		public System.Data.Linq.Table<dkbldqt> dkbldqts
 		{
 			get
 			{
-				return this.GetTable<gdt_payer_escape>();
+				return this.GetTable<dkbldqt>();
 			}
 		}
 		
@@ -157,6 +149,140 @@ namespace QuanLiDuAn.Views
 			get
 			{
 				return this.GetTable<SinhVien>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
+	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _username;
+		
+		private string _password;
+		
+		private string _HoTen;
+		
+		private System.Nullable<int> _Phone;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnHoTenChanging(string value);
+    partial void OnHoTenChanged();
+    partial void OnPhoneChanging(System.Nullable<int> value);
+    partial void OnPhoneChanged();
+    #endregion
+		
+		public user()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
+		public string HoTen
+		{
+			get
+			{
+				return this._HoTen;
+			}
+			set
+			{
+				if ((this._HoTen != value))
+				{
+					this.OnHoTenChanging(value);
+					this.SendPropertyChanging();
+					this._HoTen = value;
+					this.SendPropertyChanged("HoTen");
+					this.OnHoTenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int")]
+		public System.Nullable<int> Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -435,419 +561,6 @@ namespace QuanLiDuAn.Views
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[user]")]
-	public partial class user : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _username;
-		
-		private string _password;
-		
-		private string _HoTen;
-		
-		private System.Nullable<int> _Phone;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
-    partial void OnPhoneChanging(System.Nullable<int> value);
-    partial void OnPhoneChanged();
-    #endregion
-		
-		public user()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this.OnusernameChanging(value);
-					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
-		public string HoTen
-		{
-			get
-			{
-				return this._HoTen;
-			}
-			set
-			{
-				if ((this._HoTen != value))
-				{
-					this.OnHoTenChanging(value);
-					this.SendPropertyChanging();
-					this._HoTen = value;
-					this.SendPropertyChanged("HoTen");
-					this.OnHoTenChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int")]
-		public System.Nullable<int> Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.gdt_payer_escape")]
-	public partial class gdt_payer_escape
-	{
-		
-		private string _taxoffice_name;
-		
-		private string _payer_code;
-		
-		private string _payer_name;
-		
-		private string _owner_id_card;
-		
-		private System.Nullable<System.DateTime> _escape_date;
-		
-		private string _warning_info;
-		
-		private string _storage_symbol;
-		
-		private string _is_deleted;
-		
-		private string _created_by;
-		
-		private System.Nullable<System.DateTime> _created_date;
-		
-		private string _deleted_by;
-		
-		private System.Nullable<System.DateTime> _deleted_date;
-		
-		private string _modified_by;
-		
-		private System.Nullable<System.DateTime> _modified_date;
-		
-		private string _file_upload;
-		
-		public gdt_payer_escape()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_taxoffice_name", DbType="NVarChar(2000)")]
-		public string taxoffice_name
-		{
-			get
-			{
-				return this._taxoffice_name;
-			}
-			set
-			{
-				if ((this._taxoffice_name != value))
-				{
-					this._taxoffice_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payer_code", DbType="NVarChar(20)")]
-		public string payer_code
-		{
-			get
-			{
-				return this._payer_code;
-			}
-			set
-			{
-				if ((this._payer_code != value))
-				{
-					this._payer_code = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_payer_name", DbType="NVarChar(2000)")]
-		public string payer_name
-		{
-			get
-			{
-				return this._payer_name;
-			}
-			set
-			{
-				if ((this._payer_name != value))
-				{
-					this._payer_name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_owner_id_card", DbType="VarChar(500)")]
-		public string owner_id_card
-		{
-			get
-			{
-				return this._owner_id_card;
-			}
-			set
-			{
-				if ((this._owner_id_card != value))
-				{
-					this._owner_id_card = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_escape_date", DbType="Date")]
-		public System.Nullable<System.DateTime> escape_date
-		{
-			get
-			{
-				return this._escape_date;
-			}
-			set
-			{
-				if ((this._escape_date != value))
-				{
-					this._escape_date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_warning_info", DbType="NVarChar(2000)")]
-		public string warning_info
-		{
-			get
-			{
-				return this._warning_info;
-			}
-			set
-			{
-				if ((this._warning_info != value))
-				{
-					this._warning_info = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_storage_symbol", DbType="NVarChar(20)")]
-		public string storage_symbol
-		{
-			get
-			{
-				return this._storage_symbol;
-			}
-			set
-			{
-				if ((this._storage_symbol != value))
-				{
-					this._storage_symbol = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_is_deleted", DbType="VarChar(32)")]
-		public string is_deleted
-		{
-			get
-			{
-				return this._is_deleted;
-			}
-			set
-			{
-				if ((this._is_deleted != value))
-				{
-					this._is_deleted = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_by", DbType="VarChar(500)")]
-		public string created_by
-		{
-			get
-			{
-				return this._created_by;
-			}
-			set
-			{
-				if ((this._created_by != value))
-				{
-					this._created_by = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created_date", DbType="Date")]
-		public System.Nullable<System.DateTime> created_date
-		{
-			get
-			{
-				return this._created_date;
-			}
-			set
-			{
-				if ((this._created_date != value))
-				{
-					this._created_date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted_by", DbType="VarChar(500)")]
-		public string deleted_by
-		{
-			get
-			{
-				return this._deleted_by;
-			}
-			set
-			{
-				if ((this._deleted_by != value))
-				{
-					this._deleted_by = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_deleted_date", DbType="Date")]
-		public System.Nullable<System.DateTime> deleted_date
-		{
-			get
-			{
-				return this._deleted_date;
-			}
-			set
-			{
-				if ((this._deleted_date != value))
-				{
-					this._deleted_date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified_by", DbType="VarChar(500)")]
-		public string modified_by
-		{
-			get
-			{
-				return this._modified_by;
-			}
-			set
-			{
-				if ((this._modified_by != value))
-				{
-					this._modified_by = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified_date", DbType="Date")]
-		public System.Nullable<System.DateTime> modified_date
-		{
-			get
-			{
-				return this._modified_date;
-			}
-			set
-			{
-				if ((this._modified_date != value))
-				{
-					this._modified_date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_file_upload", DbType="VarChar(500)")]
-		public string file_upload
-		{
-			get
-			{
-				return this._file_upload;
-			}
-			set
-			{
-				if ((this._file_upload != value))
-				{
-					this._file_upload = value;
-				}
 			}
 		}
 	}
