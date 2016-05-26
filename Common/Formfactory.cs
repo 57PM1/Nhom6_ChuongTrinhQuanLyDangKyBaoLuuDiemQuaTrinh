@@ -10,7 +10,7 @@ namespace QuanLyDuAn.Common
     public class FormFactory
     {
         public static int hockyid;
-        public static int hocky;
+        public static string hocky;
         public static double hocphi;
         public static bool trangthai;
         public static Hocky getHocKy()

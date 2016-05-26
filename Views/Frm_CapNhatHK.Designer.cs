@@ -72,6 +72,7 @@
             // 
             // hockyID
             // 
+            this.hockyID.Enabled = false;
             this.hockyID.Location = new System.Drawing.Point(154, 44);
             this.hockyID.Multiline = true;
             this.hockyID.Name = "hockyID";

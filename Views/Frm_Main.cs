@@ -36,8 +36,8 @@ namespace QuanLiDuAn
 
         private void khởiTạoHọcKỳVàMứcHọcPhíToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form101 f = new Form101();
-            f.ShowDialog();
+            Frm_KhoiTaoHocKyMHP g = new Frm_KhoiTaoHocKyMHP();
+            g.ShowDialog();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace QuanLyDuAn.Common
     public class Hocky
     {
         public int hockyID { get; set; }
-        public int hocky { get; set; }
+        public string hocky { get; set; }
         public double hocphi { get; set; }
         public bool trangthai { get; set; }
     }

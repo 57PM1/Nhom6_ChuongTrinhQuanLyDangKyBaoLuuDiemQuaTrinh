@@ -31,15 +31,25 @@ namespace QuanLiDuAn
         private void button1_Click(object sender, EventArgs e)
         {
             CON.Open();
-            SqlDataAdapter SDA = new SqlDataAdapter("update [ThuHocPHi].[dbo].[HocKy] (HocKy,HocPhi) set HocKy='" + hocphi.Text + "', HocPhi='" + hocphi.Text + "', TrangThai ='" + trangthai.Visible + "' where HocKiID ='" + hockyID.Text + "' ", CON);
+            int tt;
+            if (trangthai.Checked)
+            {
+                tt = 1;
+            }
+            else
+            {
+                tt = 0;
+            }
+            SqlDataAdapter SDA = new SqlDataAdapter("update HocKy set HocKy='" + hocky.Text + "', HocPhi='" + hocphi.Text + "', TrangThai ='" + tt + "' where HocKyID ='" + hockyID.Text + "'", CON);
             SDA.SelectCommand.ExecuteNonQuery();
             CON.Close();
             MessageBox.Show("Cap nhat thanh cong!!!");
+            this.Close();
         }
 
         private void CapNhatHK_Load(object sender, EventArgs e)
         {
-            hocphi.Text = FormFactory.hocky.ToString();
+            hocky.Text = FormFactory.hocky.ToString();
             hockyID.Text = FormFactory.hockyid.ToString();
             hocphi.Text = FormFactory.hocphi.ToString();
             if (FormFactory.trangthai)

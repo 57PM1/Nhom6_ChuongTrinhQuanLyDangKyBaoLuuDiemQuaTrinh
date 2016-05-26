@@ -12,5 +12,5 @@ C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\
 C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\bin\Debug\QuanLiDuAn.pdb
 C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\obj\Debug\QuanLiDuAn.exe
 C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\obj\Debug\QuanLiDuAn.pdb
-C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\obj\Debug\QuanLiDuAn.csprojResolveAssemblyReference.cache
 C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\obj\Debug\QuanLiDuAn.Views.Form101.resources
+C:\Users\Tran Thanh Dat\Desktop\Nhom6_ChuongTrinhQuanLyDangKyBaoLuuDiemQuaTrinh\obj\Debug\QuanLiDuAn.csprojResolveAssemblyReference.cache
